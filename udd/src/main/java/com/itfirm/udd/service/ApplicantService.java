@@ -2,13 +2,16 @@ package com.itfirm.udd.service;
 
 import com.itfirm.udd.dto.JobApplicationRequest;
 import com.itfirm.udd.dto.JobApplicationResponse;
+import com.itfirm.udd.handler.PDFHandler;
 import com.itfirm.udd.mapper.ApplicantMapper;
 import com.itfirm.udd.model.Applicant;
 import com.itfirm.udd.model.CV;
 import com.itfirm.udd.model.Education;
 import com.itfirm.udd.model.Letter;
+import com.itfirm.udd.model.elasticsearch.ApplicantIndexUnit;
 import com.itfirm.udd.repository.ApplicantRepository;
 import com.itfirm.udd.repository.EducationRepository;
+import com.itfirm.udd.service.elasticsearch.ApplicantIndexUnitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -34,6 +37,9 @@ public class ApplicantService {
     private static ApplicantMapper applicantMapper = new ApplicantMapper();
 
     @Autowired
+    private ApplicantIndexUnitService applicantIndexUnitService;
+
+    @Autowired
     private ApplicantRepository applicantRepository;
 
     @Autowired
@@ -49,6 +55,8 @@ public class ApplicantService {
 
         Applicant applicant = new Applicant(jobApplicationRequest.getName(), jobApplicationRequest.getSurname(),
                 jobApplicationRequest.getEmail(), jobApplicationRequest.getAddress(), education, cv, letter);
+
+        applicantIndexUnitService.save(applicant);
 
         return applicantMapper.entityToDto(applicantRepository.save(applicant));
     }
