@@ -17,15 +17,15 @@ public class ApplicantIndexUnit {
     @Field(type = FieldType.Keyword, index = false, store = true)
     private String id;
 
-    @Field(type = FieldType.Keyword, store = true)
+    @Field(type = FieldType.Text, analyzer = "serbian", store = true)
     private String name;
 
-    @Field(type = FieldType.Keyword, store = true)
+    @Field(type = FieldType.Text, analyzer = "serbian", store = true)
     private String surname;
 
     @Field(type = FieldType.Integer, store = true)
     private Integer educationLevel;
 
-    @Field(type = FieldType.Text, analyzer = "serbian", searchAnalyzer = "serbian")
+    @Field(type = FieldType.Text, analyzer = "serbian")
     private String content;
 }
