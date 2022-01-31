@@ -2,13 +2,11 @@ package com.itfirm.udd.service;
 
 import com.itfirm.udd.dto.JobApplicationRequest;
 import com.itfirm.udd.dto.JobApplicationResponse;
-import com.itfirm.udd.handler.PDFHandler;
 import com.itfirm.udd.mapper.ApplicantMapper;
 import com.itfirm.udd.model.Applicant;
 import com.itfirm.udd.model.CV;
 import com.itfirm.udd.model.Education;
 import com.itfirm.udd.model.Letter;
-import com.itfirm.udd.model.elasticsearch.ApplicantIndexUnit;
 import com.itfirm.udd.repository.ApplicantRepository;
 import com.itfirm.udd.repository.EducationRepository;
 import com.itfirm.udd.service.elasticsearch.ApplicantIndexUnitService;
