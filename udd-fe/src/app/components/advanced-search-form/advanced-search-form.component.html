@@ -1,16 +1,26 @@
-<div class="s130">
-  <form>
-    <div class="inner-form">
-      <div class="input-field first-wrap">
-        <input
-          id="search"
-          type="text"
-          placeholder="What are you looking for?"
-        />
-      </div>
-      <!-- <div class="input-field second-wrap">
-        <button class="btn-search" type="button">SEARCH</button>
-      </div> -->
+<div class="container">
+  <div class="search">
+    <div class="search-field">
+      <form>
+        <label for="name">Name</label>
+        <input type="text" placeholder="Ex Dave.." id="name" />
+        <label for="surname">Surname</label>
+        <input type="text" placeholder="Ex Jonas.." id="surname" />
+        <label for="username">Education level</label>
+        <mat-select>
+          <mat-option value="1">4 razreda osnovne skole</mat-option>
+          <mat-option value="2">osnovna skola</mat-option>
+          <mat-option value="3">trogodisnja srednja skola</mat-option>
+          <mat-option value="4">srednja skola</mat-option>
+          <mat-option value="5">strukovne studije</mat-option>
+          <mat-option value="6">osnovne akademske studije</mat-option>
+          <mat-option value="7">master studije</mat-option>
+          <mat-option value="8">doktorske studije</mat-option>
+        </mat-select>
+        <label for="content">Content</label>
+        <input type="text" placeholder="Ex Upravljanje.." id="content" />
+      </form>
     </div>
-  </form>
+  </div>
+  <div class="content">desni deo</div>
 </div>

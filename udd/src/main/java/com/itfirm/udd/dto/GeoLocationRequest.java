@@ -5,17 +5,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
-public class SearchFormRequest {
+@NoArgsConstructor
+@AllArgsConstructor
+public class GeoLocationRequest {
 
     @NotNull
-    @Valid
-    List<FormFieldRequest> formFieldRequestList;
+    private String City;
+
+    @NotNull
+    private int Radius;
+
+    @NotNull
+    private String MeasureUnit;
+
 }

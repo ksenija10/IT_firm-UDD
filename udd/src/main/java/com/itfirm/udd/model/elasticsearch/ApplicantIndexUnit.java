@@ -5,6 +5,8 @@ import lombok.Setter;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
+import org.springframework.data.elasticsearch.annotations.GeoPointField;
+import org.springframework.data.elasticsearch.core.geo.GeoPoint;
 
 import javax.persistence.Id;
 
@@ -26,6 +28,16 @@ public class ApplicantIndexUnit {
     @Field(type = FieldType.Integer, store = true)
     private Integer educationLevel;
 
+    @GeoPointField
+    private GeoPoint location;
+
     @Field(type = FieldType.Text, analyzer = "serbian")
     private String content;
+
+    //stored just be to presented to the user
+    @Field(type = FieldType.Text, index = false)
+    private String address;
+
+    @Field(type = FieldType.Text, index = false)
+    private String educationName;
 }

@@ -7,6 +7,7 @@ import { AdvancedSearchFormComponent } from './components/advanced-search-form/a
 import { SearchComponent } from './components/search/search.component';
 
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -16,7 +17,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdvancedSearchFormComponent,
     SearchComponent,
   ],
-  imports: [BrowserModule, BrowserAnimationsModule, MatTabsModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatTabsModule,
+    MatSelectModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
