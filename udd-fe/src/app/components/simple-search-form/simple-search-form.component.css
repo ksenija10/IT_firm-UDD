@@ -3,17 +3,17 @@
   display: flex;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Poppins", sans-serif;
-  background-position: bottom right;
-  background-repeat: no-repeat;
-  background-size: 100%;
   padding: 15px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background: white;
 }
 
 .s130 form {
   width: 100%;
   max-width: 790px;
-  padding-top: 4vh;
+  padding-top: 2vh;
 }
 
 .s130 form .inner-form {
@@ -24,14 +24,14 @@
   justify-content: space-between;
   -ms-flex-align: center;
   align-items: center;
-  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  /* box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15); */
   border-radius: 34px;
   overflow: hidden;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 
 .s130 form .inner-form .input-field {
-  height: 68px;
+  height: 50px;
 }
 
 .s130 form .inner-form .input-field input {
@@ -41,23 +41,23 @@
   display: block;
   width: 100%;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 15px;
   color: #000;
 }
 
 .s130 form .inner-form .input-field input.placeholder {
   color: #222;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .s130 form .inner-form .input-field input:-moz-placeholder {
   color: #222;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .s130 form .inner-form .input-field input::-webkit-input-placeholder {
   color: #222;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .s130 form .inner-form .input-field input:hover,
@@ -82,7 +82,7 @@
 }
 
 .s130 form .inner-form .input-field.first-wrap .svg-wrapper {
-  min-width: 80px;
+  min-width: 60px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -92,8 +92,8 @@
 }
 
 .s130 form .inner-form .input-field.first-wrap svg {
-  width: 36px;
-  height: 36px;
+  width: 26px;
+  height: 26px;
   fill: #222;
 }
 
@@ -105,7 +105,7 @@
   height: 100%;
   width: 100%;
   white-space: nowrap;
-  font-size: 16px;
+  font-size: 15px;
   color: #fff;
   border: 0;
   cursor: pointer;
@@ -126,37 +126,7 @@
 }
 
 .s130 form .info {
-  font-size: 15px;
-  color: #ccc;
+  font-size: 12px;
+  color: rgb(136, 136, 136);
   padding-left: 26px;
-}
-
-@media screen and (max-width: 992px) {
-  .s130 form .inner-form .input-field {
-    height: 50px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .s130 form .inner-form .input-field.first-wrap .svg-wrapper {
-    min-width: 40px;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: 0 10px;
-  }
-  .s130 form .inner-form .input-field.first-wrap svg {
-    width: 26px;
-    height: 26px;
-    fill: #222;
-  }
-  .s130 form .inner-form .input-field.second-wrap {
-    min-width: 100px;
-  }
-  .s130 form .inner-form .input-field.second-wrap .btn-search {
-    font-size: 13px;
-  }
 }

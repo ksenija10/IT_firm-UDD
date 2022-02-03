@@ -46,7 +46,7 @@ input,
 mat-select {
   display: inline-block;
   height: 36px;
-  width: 65%;
+  width: 100%;
   background-color: white;
   border-radius: 3px;
   padding-left: 10px;

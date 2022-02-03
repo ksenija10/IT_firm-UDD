@@ -3,22 +3,54 @@
     <div class="search-field">
       <form>
         <label for="name">Name</label>
-        <input type="text" placeholder="Ex Dave.." id="name" />
+        <div>
+          <input type="text" placeholder="Ex Dave.." />
+          <mat-checkbox>Phrase</mat-checkbox>
+          <mat-button-toggle-group>
+            <mat-button-toggle value="and">&</mat-button-toggle>
+            <mat-button-toggle value="or">||</mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
         <label for="surname">Surname</label>
-        <input type="text" placeholder="Ex Jonas.." id="surname" />
+        <div>
+          <input type="text" placeholder="Ex Jonas.." />
+          <mat-checkbox>Phrase</mat-checkbox>
+          <mat-button-toggle-group>
+            <mat-button-toggle value="and">&</mat-button-toggle>
+            <mat-button-toggle value="or">||</mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
         <label for="username">Education level</label>
-        <mat-select>
-          <mat-option value="1">4 razreda osnovne skole</mat-option>
-          <mat-option value="2">osnovna skola</mat-option>
-          <mat-option value="3">trogodisnja srednja skola</mat-option>
-          <mat-option value="4">srednja skola</mat-option>
-          <mat-option value="5">strukovne studije</mat-option>
-          <mat-option value="6">osnovne akademske studije</mat-option>
-          <mat-option value="7">master studije</mat-option>
-          <mat-option value="8">doktorske studije</mat-option>
-        </mat-select>
+        <div>
+          <mat-select placeholder="Choose one">
+            <mat-option value="1">4 razreda osnovne skole</mat-option>
+            <mat-option value="2">osnovna skola</mat-option>
+            <mat-option value="3">trogodisnja srednja skola</mat-option>
+            <mat-option value="4">srednja skola</mat-option>
+            <mat-option value="5">strukovne studije</mat-option>
+            <mat-option value="6">osnovne akademske studije</mat-option>
+            <mat-option value="7">master studije</mat-option>
+            <mat-option value="8">doktorske studije</mat-option>
+          </mat-select>
+          <mat-checkbox>Phrase</mat-checkbox>
+          <mat-button-toggle-group>
+            <mat-button-toggle value="and">&</mat-button-toggle>
+            <mat-button-toggle value="or">||</mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
         <label for="content">Content</label>
-        <input type="text" placeholder="Ex Upravljanje.." id="content" />
+        <div>
+          <textarea
+            class="text-area-size"
+            placeholder="Ex Upravljanje.."
+          ></textarea>
+          <mat-checkbox class="text-area-align-checkbox">Phrase</mat-checkbox>
+          <mat-button-toggle-group class="text-area-align-button">
+            <mat-button-toggle value="and">&</mat-button-toggle>
+            <mat-button-toggle value="or">||</mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+        <button type="button" class="btn-search">SEARCH</button>
       </form>
     </div>
   </div>

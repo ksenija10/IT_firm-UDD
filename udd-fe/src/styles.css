@@ -8,3 +8,9 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+.mat-tab-body-wrapper,
+.mat-tab-group.mat-tab-group-dynamic-height .mat-tab-body.mat-tab-body-active,
+.mat-tab-body,
+.mat-tab-group-dynamic-height .mat-tab-body-content {
+  overflow: visible !important;
+}
