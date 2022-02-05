@@ -23,4 +23,10 @@ public class JobApplicationController {
 
         return new ResponseEntity<>(applicantService.save(jobApplicationRequest), HttpStatus.OK);
     }
+
+    @GetMapping("/cv/{cvId}")
+    public ResponseEntity<byte[]> getCv(@PathVariable Long cvId) throws IOException {
+        byte[] cvBytes = applicantService.getCv(cvId);
+        return new ResponseEntity<>(cvBytes, HttpStatus.OK);
+    }
 }

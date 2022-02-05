@@ -1,0 +1,19 @@
+<div class="search-response">
+  <h2>
+    <a
+      matTooltip="Click to view CV content"
+      matTooltipPosition="above"
+      [routerLink]=""
+      (click)="openCV()"
+      [ngClass]="opened ? 'opened' : ''"
+      >{{ searchResponse.name + " " + searchResponse.surname }}</a
+    >
+  </h2>
+  <h3>Contact information: {{ searchResponse.email }}</h3>
+  <h4>
+    {{ searchResponse.education }},
+    {{ searchResponse.address }}
+  </h4>
+  <p [innerHtml]="searchResponse.highlight"></p>
+  <hr />
+</div>

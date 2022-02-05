@@ -1,9 +1,6 @@
 package com.itfirm.udd.service;
 
-import com.itfirm.udd.dto.FormFieldRequest;
-import com.itfirm.udd.dto.GeoLocationRequest;
-import com.itfirm.udd.dto.SearchFormRequest;
-import com.itfirm.udd.dto.SearchResponse;
+import com.itfirm.udd.dto.*;
 import com.itfirm.udd.dto.enums.LogicalOperator;
 import com.itfirm.udd.model.Location;
 import com.itfirm.udd.model.elasticsearch.ApplicantIndexUnit;
@@ -18,6 +15,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.elasticsearch.core.SearchHit;
 import org.springframework.data.elasticsearch.core.SearchHits;
+import org.springframework.data.elasticsearch.core.SearchPage;
 import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
@@ -37,7 +35,7 @@ public class SearchService {
     @Autowired
     private LocationService locationService;
 
-    public List<SearchResponse> simpleSearch(String query, Pageable pageable) {
+    public SearchPageResponse simpleSearch(String query, Pageable pageable) {
         NativeSearchQuery searchQuery = new NativeSearchQueryBuilder()
                 .withQuery(multiMatchQuery(query)
                         .field("name")
@@ -46,7 +44,8 @@ public class SearchService {
                         .type(MultiMatchQueryBuilder.Type.BEST_FIELDS))
                 .withPageable(pageable)
                 .withHighlightFields(
-                        new HighlightBuilder.Field("content").fragmentSize(50).numOfFragments(1))
+                        new HighlightBuilder.Field("content").fragmentSize(50).numOfFragments(1)
+                                .preTags("<b>").postTags("</b>"))
                 .build();
 
         SearchHits<ApplicantIndexUnit> searchHits = elasticsearchRestTemplate.search(searchQuery,
@@ -56,7 +55,7 @@ public class SearchService {
         return searchHitToSearchResponse(searchHits);
     }
 
-    public List<SearchResponse> advancedSearch(SearchFormRequest searchFormRequest, Pageable pageable) {
+    public SearchPageResponse advancedSearch(SearchFormRequest searchFormRequest, Pageable pageable) {
         BoolQueryBuilder boolQuery = QueryBuilders.boolQuery();
 
         for(FormFieldRequest formFieldRequest: searchFormRequest.getFormFieldRequestList()){
@@ -68,7 +67,7 @@ public class SearchService {
                 }
             } else {
                 if(formFieldRequest.isPhrase()) {
-                    boolQuery.must(QueryBuilders.matchPhraseQuery(formFieldRequest.getName(), formFieldRequest.getValue()));
+                    boolQuery.should(QueryBuilders.matchPhraseQuery(formFieldRequest.getName(), formFieldRequest.getValue()));
                 } else {
                     boolQuery.should(QueryBuilders.matchQuery(formFieldRequest.getName(), formFieldRequest.getValue()));
                 }
@@ -77,7 +76,9 @@ public class SearchService {
 
         HighlightBuilder highlightBuilder = new HighlightBuilder()
                 .highlighterType("plain")
-                .field("content");
+                .field("content")
+                .preTags("<b>")
+                .postTags("</b>");
 
         NativeSearchQuery searchQuery = new NativeSearchQueryBuilder()
                 .withQuery(boolQuery)
@@ -92,7 +93,7 @@ public class SearchService {
         return searchHitToSearchResponse(searchHits);
     }
 
-    public List<SearchResponse> geoLocationSearch(GeoLocationRequest geoLocationRequest, Pageable pageable) {
+    public SearchPageResponse geoLocationSearch(GeoLocationRequest geoLocationRequest, Pageable pageable) {
         Location location = locationService.getLocationFromAddress(geoLocationRequest.getCity());
 
         GeoDistanceQueryBuilder geoDistanceBuilder = new GeoDistanceQueryBuilder("location")
@@ -111,7 +112,7 @@ public class SearchService {
         return searchHitToSearchResponse(searchHits);
     }
 
-    private List<SearchResponse> searchHitToSearchResponse(SearchHits<ApplicantIndexUnit> searchHits) {
+    private SearchPageResponse searchHitToSearchResponse(SearchHits<ApplicantIndexUnit> searchHits) {
         List<SearchResponse> searchResponses = new ArrayList<>();
 
         for(SearchHit<ApplicantIndexUnit> searchHit : searchHits) {
@@ -119,8 +120,10 @@ public class SearchService {
 
             searchResponse.setName(searchHit.getContent().getName());
             searchResponse.setSurname(searchHit.getContent().getSurname());
+            searchResponse.setEmail(searchHit.getContent().getEmail());
             searchResponse.setEducation(searchHit.getContent().getEducationName());
             searchResponse.setAddress(searchHit.getContent().getAddress());
+            searchResponse.setCvId(searchHit.getContent().getCvId());
             if (searchHit.getHighlightFields().isEmpty()) {
                 searchResponse.setHighlight(searchHit.getContent().getContent().substring(0, 200) + "...");
             } else {
@@ -130,6 +133,6 @@ public class SearchService {
             searchResponses.add(searchResponse);
         }
 
-        return searchResponses;
+        return new SearchPageResponse(searchResponses, searchHits.getTotalHits());
     }
 }

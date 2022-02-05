@@ -8,10 +8,12 @@ import com.itfirm.udd.model.CV;
 import com.itfirm.udd.model.Education;
 import com.itfirm.udd.model.Letter;
 import com.itfirm.udd.repository.ApplicantRepository;
+import com.itfirm.udd.repository.CvRepository;
 import com.itfirm.udd.repository.EducationRepository;
 import com.itfirm.udd.service.elasticsearch.ApplicantIndexUnitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -32,7 +34,7 @@ public class ApplicantService {
     @Value("${letter.dir}")
     private String LETTER_DIR;
 
-    private static ApplicantMapper applicantMapper = new ApplicantMapper();
+    private static final ApplicantMapper applicantMapper = new ApplicantMapper();
 
     @Autowired
     private ApplicantIndexUnitService applicantIndexUnitService;
@@ -42,6 +44,9 @@ public class ApplicantService {
 
     @Autowired
     private EducationRepository educationRepository;
+
+    @Autowired
+    private CvRepository cvRepository;
 
     public JobApplicationResponse save(JobApplicationRequest jobApplicationRequest) throws IOException {
         String cvFilePath = saveFile(jobApplicationRequest.getCv(), CV_DIR);
@@ -57,6 +62,12 @@ public class ApplicantService {
         applicantIndexUnitService.save(applicant);
 
         return applicantMapper.entityToDto(applicantRepository.save(applicant));
+    }
+
+    public byte[] getCv(Long id) throws IOException {
+        CV cv = cvRepository.getById(id);
+        Path path = Paths.get(cv.getLocation());
+        return Files.readAllBytes(path);
     }
 
     private String saveFile(MultipartFile file, String DATA_DIR) throws IOException {
@@ -76,7 +87,6 @@ public class ApplicantService {
         String[] fileNameParts = cleanFileName.split("\\.");
         String fileName = String.join("_", Arrays.copyOf(fileNameParts, fileNameParts.length-1));
         fileName = fileName + "_" + LocalDateTime.now() + ".pdf";
-
         return fileName;
     }
 }

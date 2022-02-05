@@ -1,5 +1,5 @@
 <div class="s130">
-  <form>
+  <form [formGroup]="searchForm">
     <div class="inner-form">
       <div class="input-field first-wrap">
         <div class="svg-wrapper">
@@ -18,10 +18,13 @@
           id="search"
           type="text"
           placeholder="Search by name/surname/cv content"
+          formControlName="query"
         />
       </div>
       <div class="input-field second-wrap">
-        <button class="btn-search" type="button">SEARCH</button>
+        <button class="btn-search" type="button" (click)="search()">
+          SEARCH
+        </button>
       </div>
     </div>
     <span class="info"
@@ -29,5 +32,17 @@
     >
   </form>
 </div>
-
-<div style="height: 1000px; width: 100%; background-color: aquamarine"></div>
+<mat-spinner
+  *ngIf="waiting"
+  style="margin: 0 auto"
+  [diameter]="300"
+></mat-spinner>
+<app-search-page [searchPage]="searchPage"></app-search-page>
+<mat-paginator
+  *ngIf="searchPage.searchResults.length !== 0"
+  [length]="searchPage.totalResults"
+  [pageSize]="5"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  (page)="pageChanged($event)"
+>
+</mat-paginator>

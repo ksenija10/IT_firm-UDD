@@ -1,0 +1,18 @@
+.search-response {
+  margin-bottom: 25px;
+  padding: 0px 70px;
+}
+
+hr {
+  margin-top: 20px;
+  border-top: 1px solid #ddb2e99c;
+}
+
+.opened {
+  color: purple !important;
+}
+
+h2 a {
+  cursor: pointer;
+  color: #b660cd;
+}

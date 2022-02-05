@@ -14,3 +14,8 @@ body {
 .mat-tab-group-dynamic-height .mat-tab-body-content {
   overflow: visible !important;
 }
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: #ddb2e99c;
+}

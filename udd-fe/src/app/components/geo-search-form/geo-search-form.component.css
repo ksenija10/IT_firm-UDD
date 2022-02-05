@@ -9,8 +9,7 @@
 
 .content {
   width: 52%;
-  height: 1000px;
-  background: aquamarine;
+  margin-top: 35px;
 }
 
 .search-field {
@@ -111,4 +110,11 @@ mat-button-toggle-group {
   border-radius: 10px;
   margin: 20px auto auto auto;
   display: block;
+}
+.btn-search:hover {
+  background: #a64cbe;
+}
+
+.btn-search:disabled {
+  background: #a361b64f;
 }

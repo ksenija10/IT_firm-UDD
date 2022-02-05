@@ -36,8 +36,14 @@ public class ApplicantIndexUnit {
 
     //stored just be to presented to the user
     @Field(type = FieldType.Text, index = false)
+    private String email;
+
+    @Field(type = FieldType.Text, index = false)
     private String address;
 
     @Field(type = FieldType.Text, index = false)
     private String educationName;
+
+    @Field(type = FieldType.Keyword, index = false)
+    private Long cvId;
 }

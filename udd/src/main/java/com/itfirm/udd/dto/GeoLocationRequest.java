@@ -14,12 +14,12 @@ import javax.validation.constraints.NotNull;
 public class GeoLocationRequest {
 
     @NotNull
-    private String City;
+    private String city;
 
     @NotNull
-    private int Radius;
+    private int radius;
 
     @NotNull
-    private String MeasureUnit;
+    private String measureUnit;
 
 }

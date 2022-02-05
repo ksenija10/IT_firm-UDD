@@ -1,20 +1,51 @@
 <div class="container">
   <div class="search">
     <div class="search-field">
-      <form>
+      <form [formGroup]="searchForm">
         <label for="city-name">City Name</label>
-        <input type="text" placeholder="Ex Los Angeles.." />
+        <input
+          type="text"
+          formControlName="city"
+          placeholder="Ex Los Angeles.."
+        />
         <label for="radius">Radius</label>
-        <input type="number" min="1" placeholder="Ex 100.." />
+        <input
+          type="number"
+          min="1"
+          formControlName="radius"
+          placeholder="Ex 100.."
+        />
         <label for="measure-unit">Measure unit</label>
-        <mat-select placeholder="Choose one">
+        <mat-select formControlName="measureUnit" placeholder="Choose one">
           <mat-option value="km">Kilometers</mat-option>
           <mat-option value="m">Meters</mat-option>
           <mat-option value="mi">Miles</mat-option>
         </mat-select>
-        <button type="button" class="btn-search">SEARCH</button>
+        <button
+          [disabled]="searchForm.invalid"
+          type="button"
+          class="btn-search"
+          (click)="search()"
+        >
+          SEARCH
+        </button>
       </form>
     </div>
   </div>
-  <div class="content">desni deo</div>
+  <div class="content">
+    <app-search-page [searchPage]="searchPage"></app-search-page>
+    <mat-spinner
+      *ngIf="waiting"
+      style="margin: 0 auto"
+      [diameter]="300"
+    ></mat-spinner>
+    <mat-paginator
+      *ngIf="searchPage.searchResults.length !== 0"
+      [length]="searchPage.totalResults"
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      (page)="pageChanged($event)"
+    >
+    </mat-paginator>
+  </div>
 </div>

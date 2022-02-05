@@ -15,9 +15,13 @@ public class SearchResponse {
 
     private String surname;
 
+    private String email;
+
     private String education;
 
     private String address;
 
     private String highlight;
+
+    private Long cvId;
 }

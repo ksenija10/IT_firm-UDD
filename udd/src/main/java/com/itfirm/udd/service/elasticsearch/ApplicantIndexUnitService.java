@@ -8,6 +8,7 @@ import com.itfirm.udd.repository.elasticsearch.ApplicantIndexUnitRepository;
 import com.itfirm.udd.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.elasticsearch.core.geo.GeoPoint;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -24,6 +25,7 @@ public class ApplicantIndexUnitService {
     @Autowired
     private LocationService locationService;
 
+    @Async
     public ApplicantIndexUnit save(Applicant applicant) {
         String cvFilePath = applicant.getCv().getLocation();
         ApplicantIndexUnit applicantIndexUnit = pdfHandler.getIndexUnit(new File(cvFilePath));
@@ -31,9 +33,11 @@ public class ApplicantIndexUnitService {
         applicantIndexUnit.setId(cvFilePathParts[cvFilePathParts.length - 1]);
         applicantIndexUnit.setName(applicant.getName());
         applicantIndexUnit.setSurname(applicant.getSurname());
+        applicantIndexUnit.setEmail(applicant.getEmail());
         applicantIndexUnit.setEducationLevel(applicant.getEducation().getLevel());
         applicantIndexUnit.setEducationName(applicant.getEducation().getName());
         applicantIndexUnit.setAddress(applicant.getAddress());
+        applicantIndexUnit.setCvId(applicant.getCv().getId());
 
         Location location = locationService.getLocationFromAddress(applicant.getAddress());
         applicantIndexUnit.setLocation(new GeoPoint(location.getLat(), location.getLon()));

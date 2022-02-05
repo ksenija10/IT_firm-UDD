@@ -1,28 +1,62 @@
 <div class="container">
   <div class="search">
     <div class="search-field">
-      <form>
+      <form [formGroup]="searchForm">
         <label for="name">Name</label>
         <div>
-          <input type="text" placeholder="Ex Dave.." />
-          <mat-checkbox>Phrase</mat-checkbox>
-          <mat-button-toggle-group>
-            <mat-button-toggle value="and">&</mat-button-toggle>
-            <mat-button-toggle value="or">||</mat-button-toggle>
+          <input type="text" formControlName="name" placeholder="Ex Dave.." />
+          <mat-checkbox
+            matTooltip="Job application must completelly match entered name"
+            matTooltipPosition="above"
+            formControlName="namePhrase"
+            >Phrase</mat-checkbox
+          >
+          <mat-button-toggle-group formControlName="nameOperator">
+            <mat-button-toggle
+              matTooltip="Job application must contain entered name"
+              matTooltipPosition="above"
+              value="AND"
+              >&</mat-button-toggle
+            >
+            <mat-button-toggle
+              matTooltip="Job application can contain entered name"
+              matTooltipPosition="above"
+              value="OR"
+              >||</mat-button-toggle
+            >
           </mat-button-toggle-group>
         </div>
         <label for="surname">Surname</label>
         <div>
-          <input type="text" placeholder="Ex Jonas.." />
-          <mat-checkbox>Phrase</mat-checkbox>
-          <mat-button-toggle-group>
-            <mat-button-toggle value="and">&</mat-button-toggle>
-            <mat-button-toggle value="or">||</mat-button-toggle>
+          <input
+            type="text"
+            formControlName="surname"
+            placeholder="Ex Jonas.."
+          />
+          <mat-checkbox
+            matTooltip="Job application must completelly match entered surname"
+            matTooltipPosition="above"
+            formControlName="surnamePhrase"
+            >Phrase</mat-checkbox
+          >
+          <mat-button-toggle-group formControlName="surnameOperator">
+            <mat-button-toggle
+              matTooltip="Job application must contain entered surname"
+              matTooltipPosition="above"
+              value="AND"
+              >&</mat-button-toggle
+            >
+            <mat-button-toggle
+              matTooltip="Job application should contain entered name"
+              matTooltipPosition="above"
+              value="OR"
+              >||</mat-button-toggle
+            >
           </mat-button-toggle-group>
         </div>
         <label for="username">Education level</label>
         <div>
-          <mat-select placeholder="Choose one">
+          <mat-select formControlName="educationLevel" placeholder="Choose one">
             <mat-option value="1">4 razreda osnovne skole</mat-option>
             <mat-option value="2">osnovna skola</mat-option>
             <mat-option value="3">trogodisnja srednja skola</mat-option>
@@ -32,27 +66,76 @@
             <mat-option value="7">master studije</mat-option>
             <mat-option value="8">doktorske studije</mat-option>
           </mat-select>
-          <mat-checkbox>Phrase</mat-checkbox>
-          <mat-button-toggle-group>
-            <mat-button-toggle value="and">&</mat-button-toggle>
-            <mat-button-toggle value="or">||</mat-button-toggle>
+          <mat-button-toggle-group
+            class="education-align"
+            formControlName="educationLevelOperator"
+          >
+            <mat-button-toggle
+              matTooltip="Job application must contain entered education level"
+              matTooltipPosition="above"
+              value="AND"
+              >&</mat-button-toggle
+            >
+            <mat-button-toggle
+              matTooltip="Job application can contain entered education level"
+              matTooltipPosition="above"
+              value="OR"
+              >||</mat-button-toggle
+            >
           </mat-button-toggle-group>
         </div>
         <label for="content">Content</label>
         <div>
           <textarea
+            formControlName="content"
             class="text-area-size"
             placeholder="Ex Upravljanje.."
           ></textarea>
-          <mat-checkbox class="text-area-align-checkbox">Phrase</mat-checkbox>
-          <mat-button-toggle-group class="text-area-align-button">
-            <mat-button-toggle value="and">&</mat-button-toggle>
-            <mat-button-toggle value="or">||</mat-button-toggle>
+          <mat-checkbox
+            formControlName="contentPhrase"
+            matTooltip="CV must completelly match entered contetn"
+            matTooltipPosition="above"
+            class="text-area-align-checkbox"
+            >Phrase</mat-checkbox
+          >
+          <mat-button-toggle-group
+            formControlName="contentOperator"
+            class="text-area-align-button"
+          >
+            <mat-button-toggle
+              matTooltip="CV must contain entered content"
+              matTooltipPosition="above"
+              value="AND"
+              >&</mat-button-toggle
+            >
+            <mat-button-toggle
+              matTooltip="CV can contain entered content"
+              matTooltipPosition="above"
+              value="OR"
+              >||</mat-button-toggle
+            >
           </mat-button-toggle-group>
         </div>
-        <button type="button" class="btn-search">SEARCH</button>
+        <button type="button" (click)="search()" class="btn-search">
+          SEARCH
+        </button>
       </form>
     </div>
   </div>
-  <div class="content">desni deo</div>
+  <div class="content">
+    <mat-spinner
+      *ngIf="waiting"
+      style="margin: 0 auto"
+      [diameter]="300"
+    ></mat-spinner>
+    <app-search-page [searchPage]="searchPage"></app-search-page>
+    <mat-paginator
+      *ngIf="searchPage.searchResults.length !== 0"
+      [length]="searchPage.totalResults"
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      (page)="pageChanged($event)"
+    >
+    </mat-paginator>
+  </div>
 </div>

@@ -9,8 +9,7 @@
 
 .content {
   width: 52%;
-  height: 1000px;
-  background: aquamarine;
+  margin-top: 35px;
 }
 
 .search-field {
@@ -53,6 +52,9 @@ mat-select {
   font-size: 14px;
   margin-top: 3px;
 }
+textarea {
+  border-radius: 3px;
+}
 ::placeholder {
   color: #e5e5e5;
 }
@@ -61,6 +63,9 @@ mat-select {
 }
 ::ng-deep .mat-select-value {
   vertical-align: middle !important;
+}
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
+  background-color: #b660cd;
 }
 mat-checkbox {
   margin-left: 15px;
@@ -91,7 +96,7 @@ mat-button-toggle-group {
 }
 .text-area-size {
   resize: none;
-  width: 330px;
+  width: 388px;
   height: 90px;
 }
 .text-area-align-checkbox {
@@ -111,4 +116,12 @@ mat-button-toggle-group {
   border-radius: 10px;
   margin: 20px auto auto auto;
   display: block;
+}
+.btn-search:hover {
+  background: #a64cbe;
+}
+
+.education-align {
+  margin-top: -30px;
+  margin-left: 100px;
 }

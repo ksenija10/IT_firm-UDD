@@ -3,6 +3,7 @@ package com.itfirm.udd.handler;
 import com.itfirm.udd.model.elasticsearch.ApplicantIndexUnit;
 import org.apache.pdfbox.io.RandomAccessFile;
 import org.apache.pdfbox.pdfparser.PDFParser;
+import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.springframework.stereotype.Component;
 
@@ -29,7 +30,9 @@ public class PDFHandler {
     public String getText(PDFParser parser) {
         try {
             PDFTextStripper textStripper = new PDFTextStripper();
-            String text = textStripper.getText(parser.getPDDocument());
+            PDDocument doc = parser.getPDDocument();
+            String text = textStripper.getText(doc);
+            doc.close();
             return text;
         } catch (IOException e) {
             System.out.println("An error occurred when converting to PDF document");
