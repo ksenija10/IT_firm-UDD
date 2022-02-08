@@ -2,6 +2,7 @@ package com.itfirm.udd.controller;
 
 import com.itfirm.udd.dto.JobApplicationRequest;
 import com.itfirm.udd.dto.JobApplicationResponse;
+import com.itfirm.udd.exceptions.GeocodeException;
 import com.itfirm.udd.service.ApplicantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,7 +20,7 @@ public class JobApplicationController {
     private ApplicantService applicantService;
 
     @PostMapping()
-    public ResponseEntity<JobApplicationResponse> applyForJob(@ModelAttribute @Valid JobApplicationRequest jobApplicationRequest) throws IOException {
+    public ResponseEntity<JobApplicationResponse> applyForJob(@ModelAttribute @Valid JobApplicationRequest jobApplicationRequest) throws IOException, GeocodeException {
 
         return new ResponseEntity<>(applicantService.save(jobApplicationRequest), HttpStatus.OK);
     }

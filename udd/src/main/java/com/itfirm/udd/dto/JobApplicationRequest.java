@@ -35,6 +35,4 @@ public class JobApplicationRequest {
     @NotNull
     private MultipartFile cv;
 
-    @NotNull
-    private MultipartFile letter;
 }

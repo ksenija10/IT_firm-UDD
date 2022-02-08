@@ -1,9 +1,11 @@
 package com.itfirm.udd.service;
 
+import com.itfirm.udd.exceptions.GeocodeException;
 import com.itfirm.udd.model.Location;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.net.URLEncoder;
@@ -19,11 +21,14 @@ public class LocationService {
     @Autowired
     private RestTemplate restTemplate;
 
-    public Location getLocationFromAddress(String address) {
+    public Location getLocationFromAddress(String address) throws GeocodeException {
         String encodedAddress = URLEncoder.encode(address, StandardCharsets.UTF_8);
-        ResponseEntity<Location[]> locationResponse = restTemplate.getForEntity(
-                API_URL + "?key=" + API_KEY + "&q=" + encodedAddress + "&format=json", Location[].class);
-
-        return Objects.requireNonNull(locationResponse.getBody())[0];
+        try {
+            ResponseEntity<Location[]> locationResponse = restTemplate.getForEntity(
+                    API_URL + "?key=" + API_KEY + "&q=" + encodedAddress + "&format=json", Location[].class);
+            return Objects.requireNonNull(locationResponse.getBody())[0];
+        } catch (HttpClientErrorException e) {
+            throw new GeocodeException("Unable to geocode");
+        }
     }
 }

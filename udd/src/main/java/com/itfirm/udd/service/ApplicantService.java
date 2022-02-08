@@ -2,11 +2,9 @@ package com.itfirm.udd.service;
 
 import com.itfirm.udd.dto.JobApplicationRequest;
 import com.itfirm.udd.dto.JobApplicationResponse;
+import com.itfirm.udd.exceptions.GeocodeException;
 import com.itfirm.udd.mapper.ApplicantMapper;
-import com.itfirm.udd.model.Applicant;
-import com.itfirm.udd.model.CV;
-import com.itfirm.udd.model.Education;
-import com.itfirm.udd.model.Letter;
+import com.itfirm.udd.model.*;
 import com.itfirm.udd.repository.ApplicantRepository;
 import com.itfirm.udd.repository.CvRepository;
 import com.itfirm.udd.repository.EducationRepository;
@@ -40,6 +38,9 @@ public class ApplicantService {
     private ApplicantIndexUnitService applicantIndexUnitService;
 
     @Autowired
+    private LocationService locationService;
+
+    @Autowired
     private ApplicantRepository applicantRepository;
 
     @Autowired
@@ -48,18 +49,18 @@ public class ApplicantService {
     @Autowired
     private CvRepository cvRepository;
 
-    public JobApplicationResponse save(JobApplicationRequest jobApplicationRequest) throws IOException {
+    public JobApplicationResponse save(JobApplicationRequest jobApplicationRequest) throws IOException, GeocodeException {
         String cvFilePath = saveFile(jobApplicationRequest.getCv(), CV_DIR);
         CV cv = new CV(cvFilePath);
-        String letterFilePath = saveFile(jobApplicationRequest.getLetter(), LETTER_DIR);
-        Letter letter = new Letter(letterFilePath);
 
         Education education = educationRepository.getById(jobApplicationRequest.getEducationId());
 
         Applicant applicant = new Applicant(jobApplicationRequest.getName(), jobApplicationRequest.getSurname(),
-                jobApplicationRequest.getEmail(), jobApplicationRequest.getAddress(), education, cv, letter);
+                jobApplicationRequest.getEmail(), jobApplicationRequest.getAddress(), education, cv);
 
-        applicantIndexUnitService.save(applicant);
+        Location location = locationService.getLocationFromAddress(applicant.getAddress());
+
+        applicantIndexUnitService.save(applicant, location);
 
         return applicantMapper.entityToDto(applicantRepository.save(applicant));
     }

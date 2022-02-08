@@ -7,7 +7,6 @@ public class ApplicantMapper {
 
     public JobApplicationResponse entityToDto(Applicant applicant) {
         return new JobApplicationResponse(applicant.getId(), applicant.getName(), applicant.getSurname(),
-                applicant.getEmail(), applicant.getAddress(), applicant.getEducation().getName(), applicant.getCv().getLocation(),
-                applicant.getLetter().getLocation());
+                applicant.getEmail(), applicant.getAddress(), applicant.getEducation().getName(), applicant.getCv().getLocation());
     }
 }

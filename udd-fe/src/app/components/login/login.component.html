@@ -1,0 +1,29 @@
+<div class="login-container">
+  <div class="login-form">
+    <div class="search-field">
+      <form [formGroup]="loginForm">
+        <div class="title"><h2>Login</h2></div>
+        <label for="username">Username</label>
+        <div>
+          <input
+            type="text"
+            formControlName="username"
+            placeholder="email@example.com"
+          />
+        </div>
+        <label for="password">Password</label>
+        <div>
+          <input type="password" formControlName="password" />
+        </div>
+        <button
+          type="button"
+          (click)="login()"
+          class="btn-login"
+          [disabled]="loginForm.invalid"
+        >
+          LOGIN
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

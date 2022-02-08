@@ -1,0 +1,61 @@
+<div class="job-application-container">
+  <div class="job-application">
+    <div class="search-field">
+      <form [formGroup]="jobApplicationForm">
+        <div class="title"><h2>Apply For Job</h2></div>
+        <label for="name">Name</label>
+        <div>
+          <input type="text" formControlName="name" placeholder="Ex Dave.." />
+        </div>
+        <label for="surname">Surname</label>
+        <div>
+          <input
+            type="text"
+            formControlName="surname"
+            placeholder="Ex Jonas.."
+          />
+        </div>
+        <label for="email">Email</label>
+        <div>
+          <input
+            type="text"
+            formControlName="email"
+            placeholder="email@example.com"
+          />
+        </div>
+        <label for="address">Address</label>
+        <div>
+          <input
+            type="text"
+            formControlName="address"
+            placeholder="Ex Trg Dositeja Obradovica 6.."
+          />
+        </div>
+        <label for="educationLevel">Education level</label>
+        <div>
+          <mat-select formControlName="educationLevel" placeholder="Choose one">
+            <mat-option value="1">4 razreda osnovne skole</mat-option>
+            <mat-option value="2">osnovna skola</mat-option>
+            <mat-option value="3">trogodisnja srednja skola</mat-option>
+            <mat-option value="4">srednja skola</mat-option>
+            <mat-option value="5">strukovne studije</mat-option>
+            <mat-option value="6">osnovne akademske studije</mat-option>
+            <mat-option value="7">master studije</mat-option>
+            <mat-option value="8">doktorske studije</mat-option>
+          </mat-select>
+        </div>
+        <label for="cv" class="cv-upload">CV</label>
+        <span [innerText]="cvName" class="cv-name"></span>
+        <input id="cv" type="file" (change)="showCvName($event)" />
+        <button
+          type="button"
+          (click)="apply()"
+          class="btn-search"
+          [disabled]="jobApplicationForm.invalid || cvType !== 'pdf'"
+        >
+          APPLY
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

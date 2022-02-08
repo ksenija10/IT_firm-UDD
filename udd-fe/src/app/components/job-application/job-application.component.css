@@ -1,0 +1,147 @@
+.job-application-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.job-application {
+  width: 40%;
+  padding: 55px;
+}
+
+.content {
+  width: 52%;
+  margin-top: 35px;
+}
+
+.title {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.search-field {
+  border-radius: 20px;
+  background: #e2c1ebfb;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+body {
+  margin: 0px;
+}
+
+form {
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 5px 35px 20px 35px;
+}
+form * {
+  color: black;
+  outline: none;
+  border: none;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-size: 16px;
+}
+input,
+mat-select {
+  display: inline-block;
+  height: 36px;
+  width: 90%;
+  background-color: white;
+  border-radius: 3px;
+  padding-left: 10px;
+  font-size: 14px;
+  margin-top: 3px;
+}
+textarea {
+  border-radius: 3px;
+}
+::placeholder {
+  color: #e5e5e5;
+}
+::ng-deep .mat-select-trigger {
+  height: 2.6em !important;
+}
+::ng-deep .mat-select-value {
+  vertical-align: middle !important;
+}
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
+  background-color: #b660cd;
+}
+mat-checkbox {
+  margin-left: 15px;
+}
+mat-button-toggle-group {
+  height: 36px;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+::ng-deep
+  .mat-button-toggle-appearance-standard
+  .mat-button-toggle-label-content {
+  line-height: 36px;
+}
+::ng-deep .mat-button-toggle-checked {
+  background-color: #b660cd;
+  color: white !important;
+}
+::ng-deep
+  .mat-checkbox-checked.mat-accent
+  .mat-checkbox-ripple
+  .mat-ripple-element {
+  background-color: #b660cd !important;
+}
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #b660cd;
+}
+.text-area-size {
+  resize: none;
+  width: 388px;
+  height: 90px;
+}
+.text-area-align-checkbox {
+  vertical-align: top;
+  margin-top: 32px;
+}
+.text-area-align-button {
+  vertical-align: top;
+  margin-top: 26px;
+}
+
+.btn-search {
+  color: white !important;
+  background-color: #b660cd;
+  border-radius: 3px;
+  padding: 8px 15px;
+  border-radius: 10px;
+  margin: 20px auto auto auto;
+  display: block;
+}
+.btn-search:hover {
+  background: #a64cbe;
+}
+.btn-search:disabled {
+  background: #a361b64f;
+}
+
+input[type="file"] {
+  display: none;
+}
+.cv-upload {
+  border: 1px solid #ccc;
+  background: white;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+.cv-name {
+  margin-left: 10px;
+}

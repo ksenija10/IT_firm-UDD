@@ -1,5 +1,6 @@
 package com.itfirm.udd.service.elasticsearch;
 
+import com.itfirm.udd.exceptions.GeocodeException;
 import com.itfirm.udd.handler.PDFHandler;
 import com.itfirm.udd.model.Applicant;
 import com.itfirm.udd.model.Location;
@@ -22,11 +23,8 @@ public class ApplicantIndexUnitService {
     @Autowired
     private ApplicantIndexUnitRepository applicantIndexUnitRepository;
 
-    @Autowired
-    private LocationService locationService;
-
     @Async
-    public ApplicantIndexUnit save(Applicant applicant) {
+    public ApplicantIndexUnit save(Applicant applicant, Location location) {
         String cvFilePath = applicant.getCv().getLocation();
         ApplicantIndexUnit applicantIndexUnit = pdfHandler.getIndexUnit(new File(cvFilePath));
         String[] cvFilePathParts = cvFilePath.split("\\/");
@@ -39,7 +37,6 @@ public class ApplicantIndexUnitService {
         applicantIndexUnit.setAddress(applicant.getAddress());
         applicantIndexUnit.setCvId(applicant.getCv().getId());
 
-        Location location = locationService.getLocationFromAddress(applicant.getAddress());
         applicantIndexUnit.setLocation(new GeoPoint(location.getLat(), location.getLon()));
 
         return applicantIndexUnitRepository.save(applicantIndexUnit);

@@ -4,6 +4,7 @@ import com.itfirm.udd.dto.GeoLocationRequest;
 import com.itfirm.udd.dto.SearchFormRequest;
 import com.itfirm.udd.dto.SearchPageResponse;
 import com.itfirm.udd.dto.SearchResponse;
+import com.itfirm.udd.exceptions.GeocodeException;
 import com.itfirm.udd.model.elasticsearch.ApplicantIndexUnit;
 import com.itfirm.udd.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.core.SearchHits;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -24,6 +26,7 @@ public class SearchController {
     @Autowired
     private SearchService searchService;
 
+    @PreAuthorize("hasRole('ROLE_HR')")
     @GetMapping("/simple")
     public ResponseEntity<SearchPageResponse> simpleSearch(
             @NotNull @RequestParam(name = "query") String query, Pageable pageable){
@@ -32,6 +35,7 @@ public class SearchController {
         return new ResponseEntity<>(searchResponses, HttpStatus.OK);
     }
 
+    @PreAuthorize("hasRole('ROLE_HR')")
     @PostMapping("/advanced")
     public ResponseEntity<SearchPageResponse> advancedSearch(@Valid @RequestBody SearchFormRequest searchFormRequest,
                                                              Pageable pageable){
@@ -40,9 +44,10 @@ public class SearchController {
         return new ResponseEntity<>(searchResponses, HttpStatus.OK);
     }
 
+    @PreAuthorize("hasRole('ROLE_HR')")
     @PostMapping("/location")
     public ResponseEntity<SearchPageResponse> geoLocationSearch(@Valid @RequestBody GeoLocationRequest geoLocationRequest,
-                                                                  Pageable pageable) {
+                                                                  Pageable pageable) throws GeocodeException {
         SearchPageResponse searchResponses = searchService.geoLocationSearch(geoLocationRequest, pageable);
 
         return new ResponseEntity<>(searchResponses, HttpStatus.OK);

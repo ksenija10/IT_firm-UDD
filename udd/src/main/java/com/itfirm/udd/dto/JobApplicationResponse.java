@@ -22,6 +22,4 @@ public class JobApplicationResponse {
     private String education;
 
     private String cvPath;
-
-    private String letterPath;
 }

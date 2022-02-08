@@ -2,6 +2,7 @@ package com.itfirm.udd.service;
 
 import com.itfirm.udd.dto.*;
 import com.itfirm.udd.dto.enums.LogicalOperator;
+import com.itfirm.udd.exceptions.GeocodeException;
 import com.itfirm.udd.model.Location;
 import com.itfirm.udd.model.elasticsearch.ApplicantIndexUnit;
 import org.elasticsearch.common.unit.DistanceUnit;
@@ -93,7 +94,7 @@ public class SearchService {
         return searchHitToSearchResponse(searchHits);
     }
 
-    public SearchPageResponse geoLocationSearch(GeoLocationRequest geoLocationRequest, Pageable pageable) {
+    public SearchPageResponse geoLocationSearch(GeoLocationRequest geoLocationRequest, Pageable pageable) throws GeocodeException {
         Location location = locationService.getLocationFromAddress(geoLocationRequest.getCity());
 
         GeoDistanceQueryBuilder geoDistanceBuilder = new GeoDistanceQueryBuilder("location")
