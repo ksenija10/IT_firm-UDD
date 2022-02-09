@@ -9,8 +9,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CityResponse {
+public class ReportResponse {
 
-    public AddressResponse address;
+    private String name;
+    private Long value;
 }
-

@@ -9,8 +9,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CityResponse {
-
-    public AddressResponse address;
+public class AddressResponse {
+    public String City;
 }
-

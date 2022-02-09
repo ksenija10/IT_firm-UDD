@@ -1,7 +1,7 @@
 <mat-tab-group
   [selectedIndex]="selected.value"
   (selectedIndexChange)="selected.setValue($event)"
-  (selectedTabChange)="logout()"
+  (selectedTabChange)="tabChanged()"
   dynamicHeight
   mat-align-tabs="center"
 >
@@ -14,5 +14,11 @@
   <mat-tab label="Geo search">
     <app-geo-search-form></app-geo-search-form
   ></mat-tab>
+  <mat-tab label="Form access by time of day"
+    ><app-chart [type]="'time'" [chart]="chart"></app-chart
+  ></mat-tab>
+  <mat-tab label="Form access by city">
+    <app-chart [type]="'city'" [chart]="chart"></app-chart>
+  </mat-tab>
   <mat-tab label="Logout"></mat-tab>
 </mat-tab-group>

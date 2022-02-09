@@ -25,6 +25,8 @@ import { JobApplicationComponent } from './components/job-application/job-applic
 import { AuthInterceptorService } from './interceptors/auth-interceptor.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './components/login/login.component';
+import { ChartComponent } from './components/chart/chart.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { LoginComponent } from './components/login/login.component';
     SearchResponseComponent,
     JobApplicationComponent,
     LoginComponent,
+    ChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +56,8 @@ import { LoginComponent } from './components/login/login.component';
     MatTooltipModule,
     AppRoutingModule,
     MatProgressSpinnerModule,
+    NgxChartsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {

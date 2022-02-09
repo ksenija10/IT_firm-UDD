@@ -147,7 +147,7 @@ input[type="file"] {
   margin-left: 10px;
 }
 
-span {
+.login {
   cursor: pointer;
   color: #a64cbe !important;
   text-decoration: underline;
