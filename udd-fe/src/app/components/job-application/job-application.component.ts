@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { LocationRequest } from 'src/app/model/location-request.model';
 import { JobApplicationService } from 'src/app/services/job-application.service';
+import { LoggerService } from 'src/app/services/logger.service';
 
 @Component({
   selector: 'app-job-application',
@@ -16,6 +18,7 @@ export class JobApplicationComponent implements OnInit {
   cvName: string = '';
   constructor(
     private jobApplicationService: JobApplicationService,
+    private loggerService: LoggerService,
     private toastr: ToastrService,
     private router: Router
   ) {
@@ -34,9 +37,18 @@ export class JobApplicationComponent implements OnInit {
     navigator.geolocation.getCurrentPosition((position) => {
       latitude = position.coords.latitude;
       longitude = position.coords.longitude;
-      console.log(latitude);
-      console.log(longitude);
+
+      const locationRequest: LocationRequest = new LocationRequest(
+        latitude,
+        longitude
+      );
+
+      this.loggerService
+        .logFormAccess(locationRequest)
+        .subscribe((response) => {});
     });
+
+    this.loggerService;
   }
 
   apply() {
