@@ -47,4 +47,8 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+
+  redirectToJobApplication() {
+    this.router.navigate(['job-application']);
+  }
 }

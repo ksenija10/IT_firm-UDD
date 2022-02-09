@@ -122,6 +122,7 @@ mat-button-toggle-group {
   border-radius: 10px;
   margin: 20px auto auto auto;
   display: block;
+  margin-bottom: 20px;
 }
 .btn-search:hover {
   background: #a64cbe;
@@ -144,4 +145,11 @@ input[type="file"] {
 }
 .cv-name {
   margin-left: 10px;
+}
+
+span {
+  cursor: pointer;
+  color: #a64cbe !important;
+  text-decoration: underline;
+  padding-left: 170px;
 }

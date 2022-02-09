@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { JobApplicationService } from 'src/app/services/job-application.service';
 
@@ -15,7 +16,8 @@ export class JobApplicationComponent implements OnInit {
   cvName: string = '';
   constructor(
     private jobApplicationService: JobApplicationService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {
     this.jobApplicationForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
@@ -73,5 +75,9 @@ export class JobApplicationComponent implements OnInit {
     this.cv = event.target.files[0];
     this.cvName = this.cv.name;
     this.cvType = this.cvName.substring(this.cvName.lastIndexOf('.') + 1);
+  }
+
+  redirectToLogin() {
+    this.router.navigate(['login']);
   }
 }

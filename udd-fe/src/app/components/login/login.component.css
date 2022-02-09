@@ -72,10 +72,18 @@ textarea {
   border-radius: 10px;
   margin: 20px auto auto auto;
   display: block;
+  margin-bottom: 20px;
 }
 .btn-login:hover {
   background: #a64cbe;
 }
 .btn-login:disabled {
   background: #a361b64f;
+}
+
+span {
+  cursor: pointer;
+  color: #a64cbe !important;
+  text-decoration: underline;
+  padding-left: 100px;
 }
