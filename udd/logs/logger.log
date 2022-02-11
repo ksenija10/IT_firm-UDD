@@ -1109,3 +1109,281 @@ org.elasticsearch.ElasticsearchException: Elasticsearch exception [type=illegal_
 2022-02-09 20:48:40,282 INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl.perform - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 2022-02-09 20:48:40,360 INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
 2022-02-09 20:48:40,382 INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+2022-02-09 22:36:23,324 INFO  o.h.validator.internal.util.Version.<clinit> - HV000001: Hibernate Validator 6.2.0.Final
+2022-02-09 22:36:23,337 INFO  com.itfirm.udd.UddApplication.logStarting - Starting UddApplication using Java 11.0.2 on Ksenijas-MacBook-Pro.local with PID 70924 (/Users/ksenija/Desktop/UDD/IT_firm-UDD/udd/target/classes started by ksenija in /Users/ksenija/Desktop/UDD/IT_firm-UDD/udd)
+2022-02-09 22:36:23,342 INFO  com.itfirm.udd.UddApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2022-02-09 22:36:25,731 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.multipleStoresDetected - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-09 22:36:25,735 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2022-02-09 22:36:25,833 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.ApplicantRepository. If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository.
+2022-02-09 22:36:25,837 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.CvRepository. If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository.
+2022-02-09 22:36:25,841 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.EducationRepository. If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository.
+2022-02-09 22:36:25,848 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.UserRepository. If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository.
+2022-02-09 22:36:25,886 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 145 ms. Found 1 Elasticsearch repository interfaces.
+2022-02-09 22:36:25,904 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.multipleStoresDetected - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-09 22:36:25,905 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2022-02-09 22:36:25,921 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.ApplicantRepository. If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository.
+2022-02-09 22:36:25,922 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.CvRepository. If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository.
+2022-02-09 22:36:25,923 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.EducationRepository. If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository.
+2022-02-09 22:36:25,924 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.UserRepository. If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository.
+2022-02-09 22:36:25,939 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 33 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2022-02-09 22:36:25,969 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.multipleStoresDetected - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-09 22:36:25,972 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-09 22:36:26,035 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.elasticsearch.ApplicantIndexUnitRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2022-02-09 22:36:26,043 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+2022-02-09 22:36:27,752 INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+2022-02-09 22:36:27,778 INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+2022-02-09 22:36:27,780 INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+2022-02-09 22:36:27,780 INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-09 22:36:28,064 INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2022-02-09 22:36:28,065 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 4490 ms
+2022-02-09 22:36:28,572 INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-09 22:36:28,688 INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.6.3.Final
+2022-02-09 22:36:28,893 INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-09 22:36:29,038 INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+2022-02-09 22:36:29,166 INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+2022-02-09 22:36:29,188 INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-02-09 22:36:30,069 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+2022-02-09 22:36:30,071 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - relation "applicant" does not exist, skipping
+2022-02-09 22:36:30,072 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+2022-02-09 22:36:30,073 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - relation "applicant" does not exist, skipping
+2022-02-09 22:36:30,073 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+2022-02-09 22:36:30,073 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - relation "user_role" does not exist, skipping
+2022-02-09 22:36:30,074 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+2022-02-09 22:36:30,074 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - relation "user_role" does not exist, skipping
+2022-02-09 22:36:30,076 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+2022-02-09 22:36:30,076 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - table "applicant" does not exist, skipping
+2022-02-09 22:36:30,077 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+2022-02-09 22:36:30,077 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - table "cv" does not exist, skipping
+2022-02-09 22:36:30,077 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+2022-02-09 22:36:30,077 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - table "education" does not exist, skipping
+2022-02-09 22:36:30,078 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+2022-02-09 22:36:30,078 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - table "letter" does not exist, skipping
+2022-02-09 22:36:30,079 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+2022-02-09 22:36:30,079 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - table "role" does not exist, skipping
+2022-02-09 22:36:30,079 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+2022-02-09 22:36:30,080 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - table "user_role" does not exist, skipping
+2022-02-09 22:36:30,080 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+2022-02-09 22:36:30,081 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - table "users" does not exist, skipping
+2022-02-09 22:36:30,173 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-09 22:36:30,182 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-09 22:36:30,935 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-09 22:36:33,438 INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure Ant [pattern='/auth/login', POST] with []
+2022-02-09 22:36:33,496 INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@732fa176, org.springframework.security.web.context.SecurityContextPersistenceFilter@1e6f7c25, org.springframework.security.web.header.HeaderWriterFilter@1de6f29d, org.springframework.web.filter.CorsFilter@413e8246, org.springframework.security.web.authentication.logout.LogoutFilter@2220c5f7, com.itfirm.udd.security.TokenAuthenticationFilter@4c7b4a31, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23243bc0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@659565ed, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2df7766b, org.springframework.security.web.session.SessionManagementFilter@79d8075c, org.springframework.security.web.access.ExceptionTranslationFilter@e6fbf82, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@f3c27e9]
+2022-02-09 22:36:33,579 INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+2022-02-09 22:36:33,593 INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+2022-02-09 22:36:33,611 INFO  com.itfirm.udd.UddApplication.logStarted - Started UddApplication in 11.447 seconds (JVM running for 12.483)
+2022-02-09 22:37:08,801 INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-09 22:37:08,802 INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+2022-02-09 22:37:08,809 INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 7 ms
+2022-02-09 22:38:06,598 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-09 22:38:06,607 INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl.perform - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-02-09 22:38:06,667 INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+2022-02-09 22:38:06,681 INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+2022-02-10 10:01:31,791 INFO  com.itfirm.udd.UddApplication.logStarting - Starting UddApplication using Java 11.0.2 on Ksenijas-MacBook-Pro.local with PID 72329 (/Users/ksenija/Desktop/UDD/IT_firm-UDD/udd/target/classes started by ksenija in /Users/ksenija/Desktop/UDD/IT_firm-UDD/udd)
+2022-02-10 10:01:31,782 INFO  o.h.validator.internal.util.Version.<clinit> - HV000001: Hibernate Validator 6.2.0.Final
+2022-02-10 10:01:31,809 INFO  com.itfirm.udd.UddApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2022-02-10 10:01:34,321 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.multipleStoresDetected - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-10 10:01:34,328 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2022-02-10 10:01:34,424 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.ApplicantRepository. If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository.
+2022-02-10 10:01:34,429 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.CvRepository. If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository.
+2022-02-10 10:01:34,432 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.EducationRepository. If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository.
+2022-02-10 10:01:34,442 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.UserRepository. If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository.
+2022-02-10 10:01:34,483 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 149 ms. Found 1 Elasticsearch repository interfaces.
+2022-02-10 10:01:34,499 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.multipleStoresDetected - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-10 10:01:34,500 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2022-02-10 10:01:34,514 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.ApplicantRepository. If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository.
+2022-02-10 10:01:34,515 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.CvRepository. If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository.
+2022-02-10 10:01:34,516 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.EducationRepository. If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository.
+2022-02-10 10:01:34,518 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.UserRepository. If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository.
+2022-02-10 10:01:34,522 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 21 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2022-02-10 10:01:34,545 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.multipleStoresDetected - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-10 10:01:34,548 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-10 10:01:34,607 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate - Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.itfirm.udd.repository.elasticsearch.ApplicantIndexUnitRepository. If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: javax.persistence.Entity, javax.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository.
+2022-02-10 10:01:34,633 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 74 ms. Found 4 JPA repository interfaces.
+2022-02-10 10:01:36,205 INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+2022-02-10 10:01:36,218 INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+2022-02-10 10:01:36,220 INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+2022-02-10 10:01:36,221 INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-10 10:01:36,431 INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2022-02-10 10:01:36,431 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 4310 ms
+2022-02-10 10:01:37,176 INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-02-10 10:01:37,252 INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.6.3.Final
+2022-02-10 10:01:37,504 INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-02-10 10:01:37,781 INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+2022-02-10 10:01:38,023 INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+2022-02-10 10:01:38,065 INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-02-10 10:01:39,407 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+2022-02-10 10:01:39,408 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - constraint "uk_tmnq8tn2xv4kx2oek2rb3wwoe" of relation "cv" does not exist, skipping
+2022-02-10 10:01:39,414 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+2022-02-10 10:01:39,415 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - constraint "uk_npx147ypr8pwkd03x49j57ohh" of relation "education" does not exist, skipping
+2022-02-10 10:01:39,416 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+2022-02-10 10:01:39,416 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - constraint "uk_pbrob0uedj3y9y959cq2nyfy" of relation "education" does not exist, skipping
+2022-02-10 10:01:39,417 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+2022-02-10 10:01:39,418 WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - constraint "uk_1m96u92yqwt7q8ngq8hbedeiv" of relation "letter" does not exist, skipping
+2022-02-10 10:01:39,426 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-02-10 10:01:39,437 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-10 10:01:41,477 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-10 10:01:46,245 INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure Ant [pattern='/auth/login', POST] with []
+2022-02-10 10:01:46,346 INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7dd92a36, org.springframework.security.web.context.SecurityContextPersistenceFilter@24347d8b, org.springframework.security.web.header.HeaderWriterFilter@669b8190, org.springframework.web.filter.CorsFilter@531ed68e, org.springframework.security.web.authentication.logout.LogoutFilter@23cfc9eb, com.itfirm.udd.security.TokenAuthenticationFilter@551976c2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f9919a2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@13e6ab86, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6bbd4048, org.springframework.security.web.session.SessionManagementFilter@1d6ed085, org.springframework.security.web.access.ExceptionTranslationFilter@5dfb078, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@281d3ce7]
+2022-02-10 10:01:46,449 INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+2022-02-10 10:01:46,483 INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+2022-02-10 10:01:46,530 INFO  com.itfirm.udd.UddApplication.logStarted - Started UddApplication in 16.113 seconds (JVM running for 17.092)
+2022-02-10 10:01:59,909 INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-10 10:01:59,915 INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+2022-02-10 10:01:59,919 INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 4 ms
+2022-02-10 10:02:00,990 INFO  LogController.class.logFormAccess - Job application form accessed from city=Novi Sad City
+2022-02-10 10:04:14,371 INFO  LogController.class.logFormAccess - Job application form accessed from city=Novi Sad City
+2022-02-10 10:15:45,665 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m54s986ms).
+2022-02-10 10:19:06,065 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver.logException - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot coerce empty String ("") to `com.itfirm.udd.dto.enums.LogicalOperator` value (but could if coercion was enabled using `CoercionConfig`); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot coerce empty String ("") to `com.itfirm.udd.dto.enums.LogicalOperator` value (but could if coercion was enabled using `CoercionConfig`)<EOL> at [Source: (PushbackInputStream); line: 1, column: 74] (through reference chain: com.itfirm.udd.dto.SearchFormRequest["formFieldRequestList"]->java.util.ArrayList[0]->com.itfirm.udd.dto.FormFieldRequest["operator"])]
+2022-02-10 10:26:13,715 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m27s977ms).
+2022-02-10 10:30:50,217 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m6s482ms).
+2022-02-10 10:49:38,148 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m47s932ms).
+2022-02-10 10:51:21,475 INFO  LogController.class.logFormAccess - Job application form accessed from city=Subotica
+2022-02-10 10:51:21,475 INFO  LogController.class.logFormAccess - Job application form accessed from city=Subotica City
+2022-02-10 10:51:21,475 INFO  LogController.class.logFormAccess - Job application form accessed from city=Subotica City
+2022-02-10 10:51:21,475 INFO  LogController.class.logFormAccess - Job application form accessed from city=Subotica City
+2022-02-10 10:51:21,475 INFO  LogController.class.logFormAccess - Job application form accessed from city=Subotica City
+
+
+
+2022-02-10 11:04:32,886 INFO  LogController.class.logFormAccess - Job application form accessed from city=Novi Sad City
+2022-02-10 11:04:53,156 INFO  LogController.class.logFormAccess - Job application form accessed from city=Novi Sad City
+2022-02-10 11:09:45,948 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m37s595ms).
+2022-02-10 11:40:53,373 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m7s431ms).
+2022-02-10 12:07:01,562 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=25m38s157ms).
+2022-02-10 12:19:24,702 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver.logException - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot coerce empty String ("") to `com.itfirm.udd.dto.enums.LogicalOperator` value (but could if coercion was enabled using `CoercionConfig`); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot coerce empty String ("") to `com.itfirm.udd.dto.enums.LogicalOperator` value (but could if coercion was enabled using `CoercionConfig`)<EOL> at [Source: (PushbackInputStream); line: 1, column: 68] (through reference chain: com.itfirm.udd.dto.SearchFormRequest["formFieldRequestList"]->java.util.ArrayList[0]->com.itfirm.udd.dto.FormFieldRequest["operator"])]
+2022-02-10 12:19:35,333 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver.logException - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot coerce empty String ("") to `com.itfirm.udd.dto.enums.LogicalOperator` value (but could if coercion was enabled using `CoercionConfig`); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot coerce empty String ("") to `com.itfirm.udd.dto.enums.LogicalOperator` value (but could if coercion was enabled using `CoercionConfig`)<EOL> at [Source: (PushbackInputStream); line: 1, column: 73] (through reference chain: com.itfirm.udd.dto.SearchFormRequest["formFieldRequestList"]->java.util.ArrayList[0]->com.itfirm.udd.dto.FormFieldRequest["operator"])]
+2022-02-10 12:19:50,009 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver.logException - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot coerce empty String ("") to `com.itfirm.udd.dto.enums.LogicalOperator` value (but could if coercion was enabled using `CoercionConfig`); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot coerce empty String ("") to `com.itfirm.udd.dto.enums.LogicalOperator` value (but could if coercion was enabled using `CoercionConfig`)<EOL> at [Source: (PushbackInputStream); line: 1, column: 73] (through reference chain: com.itfirm.udd.dto.SearchFormRequest["formFieldRequestList"]->java.util.ArrayList[0]->com.itfirm.udd.dto.FormFieldRequest["operator"])]
+2022-02-10 12:32:59,616 INFO  LogController.class.logFormAccess - Job application form accessed from city=Novi Sad City
+2022-02-10 12:36:29,469 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet].log - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.itfirm.udd.exceptions.GeocodeException: Unable to geocode] with root cause
+com.itfirm.udd.exceptions.GeocodeException: Unable to geocode
+	at com.itfirm.udd.service.LocationService.getLocationFromAddress(LocationService.java:36)
+	at com.itfirm.udd.service.SearchService.geoLocationSearch(SearchService.java:98)
+	at com.itfirm.udd.controller.SearchController.geoLocationSearch(SearchController.java:51)
+	at com.itfirm.udd.controller.SearchController$$FastClassBySpringCGLIB$$db1801e5.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.itfirm.udd.controller.SearchController$$EnhancerBySpringCGLIB$$6db7f65a.geoLocationSearch(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at com.itfirm.udd.security.TokenAuthenticationFilter.doFilterInternal(TokenAuthenticationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-02-10 13:50:31,055 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h8m59s32ms).
+2022-02-10 15:10:14,063 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h19m43s9ms).
+2022-02-10 15:59:40,571 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49m26s508ms).
+2022-02-10 16:07:47,658 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m7s88ms).
+2022-02-10 17:24:59,001 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h1m11s205ms).
+2022-02-10 18:04:06,493 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m3s704ms).
+2022-02-10 19:27:10,541 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h22m34s41ms).
+2022-02-10 20:49:30,745 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h22m20s204ms).
+2022-02-10 21:29:51,985 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=40m21s240ms).
+2022-02-10 22:00:45,780 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m53s529ms).
+2022-02-10 22:31:37,630 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m51s567ms).
+2022-02-10 23:41:41,915 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=33m3s955ms).
+2022-02-11 01:03:15,919 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h21m34s5ms).
+2022-02-11 02:26:42,195 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h23m26s275ms).
+2022-02-11 03:49:38,412 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h22m56s217ms).
+2022-02-11 05:12:07,484 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h22m29s73ms).
+2022-02-11 06:33:12,467 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h21m4s983ms).
+2022-02-11 07:33:47,723 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h35s255ms).
+2022-02-11 08:14:36,980 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m49s46ms).
+2022-02-11 08:34:45,863 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m8s807ms).
+2022-02-11 08:55:04,544 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m48s588ms).
+2022-02-11 09:19:19,892 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m45s138ms).
+2022-02-11 09:46:38,720 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=24m48s790ms).
+2022-02-11 09:51:06,105 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m27s385ms).
+2022-02-11 10:08:35,320 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m59s152ms).
+2022-02-11 11:38:00,201 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h25m54s835ms).
+2022-02-11 12:18:57,627 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=40m57s426ms).
+2022-02-11 12:23:18,984 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m21s357ms).
+2022-02-11 12:37:31,496 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m12s512ms).
+2022-02-11 13:46:16,354 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h8m14s862ms).
+2022-02-11 15:08:04,260 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h21m47s906ms).
+2022-02-11 16:21:57,850 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h13m53s590ms).
+2022-02-11 17:46:01,892 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h24m4s42ms).
+2022-02-11 17:52:49,925 WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m48s33ms).

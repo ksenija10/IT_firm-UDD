@@ -25,7 +25,7 @@ export class SimpleSearchFormComponent implements OnInit {
       query: new FormControl('', [Validators.required]),
     });
     this.pageEvent.pageIndex = 0;
-    this.pageEvent.pageSize = 10;
+    this.pageEvent.pageSize = 5;
   }
 
   ngOnInit(): void {}

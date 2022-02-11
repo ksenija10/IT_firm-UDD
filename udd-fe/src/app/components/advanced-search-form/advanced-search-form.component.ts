@@ -38,7 +38,7 @@ export class AdvancedSearchFormComponent implements OnInit {
       contentOperator: new FormControl(''),
     });
     this.pageEvent.pageIndex = 0;
-    this.pageEvent.pageSize = 10;
+    this.pageEvent.pageSize = 5;
   }
 
   ngOnInit(): void {}

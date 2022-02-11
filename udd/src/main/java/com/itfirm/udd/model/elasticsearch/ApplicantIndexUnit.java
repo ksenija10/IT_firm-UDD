@@ -34,16 +34,16 @@ public class ApplicantIndexUnit {
     @Field(type = FieldType.Text, analyzer = "serbian")
     private String content;
 
-    //stored just be to presented to the user
-    @Field(type = FieldType.Text, index = false)
+    //stored just to be presented to the user
+    @Field(type = FieldType.Text, index = false, store = true)
     private String email;
 
-    @Field(type = FieldType.Text, index = false)
+    @Field(type = FieldType.Text, index = false, store = true)
     private String address;
 
-    @Field(type = FieldType.Text, index = false)
+    @Field(type = FieldType.Text, index = false, store = true)
     private String educationName;
 
-    @Field(type = FieldType.Keyword, index = false)
+    @Field(type = FieldType.Keyword, index = false, store = true)
     private Long cvId;
 }

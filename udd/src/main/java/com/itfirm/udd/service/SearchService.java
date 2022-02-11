@@ -45,7 +45,7 @@ public class SearchService {
                         .type(MultiMatchQueryBuilder.Type.BEST_FIELDS))
                 .withPageable(pageable)
                 .withHighlightFields(
-                        new HighlightBuilder.Field("content").fragmentSize(50).numOfFragments(1)
+                        new HighlightBuilder.Field("content").fragmentSize(100).numOfFragments(1)
                                 .preTags("<b>").postTags("</b>"))
                 .build();
 

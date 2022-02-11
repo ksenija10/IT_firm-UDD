@@ -29,9 +29,6 @@ public class ApplicantService {
     @Value("${cv.dir}")
     private String CV_DIR;
 
-    @Value("${letter.dir}")
-    private String LETTER_DIR;
-
     private static final ApplicantMapper applicantMapper = new ApplicantMapper();
 
     @Autowired
